@@ -1,0 +1,11 @@
+t=-10:0.01:10;
+x_1=function_3_1_A(t);
+h_1=function_3_1_B(t);
+y_1=conv(x_1,h_1,'same')/100;
+subplot(2,1,1)
+plot(t,y_1)
+X_1=fft(x_1);
+H_1=fft(h_1);
+y_1_ift=ifft(X_1.*H_1);
+subplot(2,1,2)
+plot(t,y_1_ift/100)
